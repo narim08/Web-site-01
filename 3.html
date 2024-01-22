@@ -1,44 +1,95 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Web - autumn</title>
+    <title>SeasonNote-Autumn</title>
     <meta charset="utf-8">
+    <style>
+      #active{
+        color: darkgoldenrod;
+        text-decoration: underline;
+      }
+      h1{
+        font-size: 60px;
+        text-align: center;
+        border-bottom: 5px solid darkgoldenrod;
+        margin:0px;
+        padding:30px;
+      }
+      #list{ /*목록*/
+        border-right: 3px solid darkgoldenrod;
+      }
+      #checkList{
+        border-bottom: 1px solid darkgoldenrod;
+        margin-right: 40px;
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+      }
+      .container{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: -1;
+      }
+      .container::after{
+        width: 100%;
+        height: 100%;
+        content: "";
+        background-image: url(autumn.jpg);
+        background-position: center 16%;
+        position: absolute;
+        top:0;
+        left:0;
+        z-index: -1;
+        opacity: 0.4;
+      }
+      .title{
+        font-size: 50px;
+        text-align: center;
+        color: darkgoldenrod;
+        text-shadow: 2px 2px 2px #000;
+        border-bottom: 5px solid darkgoldenrod;
+        margin:0px;
+        padding:50px;
+      }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="colors.js"></script>
   </head>
   
   <body>
-    <h1 style="color: darkgoldenrod;">SEASON</h1>
-    <ul>
-      <li><a href="index.html">main</a></li>
-      <li><a href="1.html">봄</a></li>
-      <li><a href="2.html">여름</a></li>
-      <li><a href="3.html">가을</a></li>
-      <li><a href="4.html">겨울</a></li>
-    </ul>
-
-    <h2 style="color: darkgoldenrod;">🍁AUTUMN🍁</h2>
-    <img src="autumn.jpg" width="500"> <br>
-    <a href="https://unsplash.com/ko" target="_blank" title="unsplash" style="font-size: 13px;"> -이미지 출처- </a><br><br>
-
-    <h2 style="color: darkgoldenrod;">✅체크리스트</h2>
-    <p>
-      <input type="checkbox"> 졸업 작품 팀원 구하기...<br>
-      <input type="checkbox"> 가을 옷 사기<br>
-      <input type="checkbox"> 프론트엔드 공부 하기<br>
-      <input type="checkbox"> 19학점 이상 듣기<br>
-    </p><br>
+    <div class="container">
+      <h1 class="title">#SEASON_NOTE_🍁AUTUMN🍁</h1>
+    </div>
+    <div id="grid">
+      <div id="list">
+        <ul>
+          <li><a href="index.html">MAIN</a></li>
+          <li><a href="1.html">봄</a></li>
+          <li><a href="2.html">여름</a></li>
+          <li><a href="3.html" id="active">가을</a></li>
+          <li><a href="4.html">겨울</a></li>
+        </ul>
+      </div>
+  
+      <div id="article">
+        <div id="checkList">
+          <h2 style="color: darkgoldenrod;">✅Check List</h2>
+          <p>
+            <input type="checkbox"> 졸업 작품 팀원 구하기...<br>
+            <input type="checkbox"> 가을 옷 사기<br>
+            <input type="checkbox"> 프론트엔드 공부 하기<br>
+            <input type="checkbox"> 19학점 이상 듣기<br>
+          </p><br>
+        </div>
     
-    <h2 style="color: darkgoldenrod;">✨TMI</h2>
-    <p>
-      <li>지옥 2학기 시작</li>
-      <li>할로윈 존재 (동숲 이벤트 가야 됨)</li>
-      <li>벌레 제일 많이 나옴 (진짜 최악)</li>
-      <li>슬슬 한 해가 끝나감 (좋음)</li>
-      <li>그냥 힘듦</li>
-    </p><br>
-
-    <h2 style="color: darkgoldenrod;">🎵추천 노래</h2>
-    <p>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/ARwVe1MYAUA?si=jKpQthuWKfvqohzz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </p><br><br>
+        <h2 style="color: darkgoldenrod;">🎵Play List</h2>
+        <p>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/ARwVe1MYAUA?si=jKpQthuWKfvqohzz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </p><br><br>
+    </div>
+    </div>
+    <input id="dark" type="button" value="night" onclick="darkmode(this, 3);">
+    <br><br>
   </body>
 </html>

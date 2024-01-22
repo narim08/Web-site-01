@@ -1,43 +1,86 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Web - spring</title>
+    <title>SeasonNote-Spring</title>
     <meta charset="utf-8">
+    <style>
+      #active{
+        color: rgb(231, 164, 175);
+        text-decoration: underline;
+      }
+      #list{ /*목록*/
+        border-right: 3px solid rgb(231, 164, 175);
+      }
+      #checkList{
+        border-bottom: 1px solid rgb(231, 164, 175);
+        margin-right: 40px;
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+      }
+      .container{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: -1;
+      }
+      .container::after{
+        width: 100%;
+        height: 100%;
+        content: "";
+        background-image: url(spring.jpg);
+        position: absolute;
+        top:0;
+        left:0;
+        z-index: -1;
+        opacity: 0.5;
+      }
+      .title{
+        font-size: 50px;
+        text-align: center;
+        color: rgb(231, 164, 175);
+        text-shadow: 2px 2px 2px #000;
+        border-bottom: 5px solid rgb(231, 164, 175);
+        margin:0px;
+        padding:50px;
+      }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="colors.js"></script>
   </head>
   
   <body>
-    <h1 style="color: rgb(231, 164, 175);">SEASON</h1>
-    <ul>
-      <li><a href="index.html">main</a></li>
-      <li><a href="1.html">봄</a></li>
-      <li><a href="2.html">여름</a></li>
-      <li><a href="3.html">가을</a></li>
-      <li><a href="4.html">겨울</a></li>
-    </ul>
-
-    <h2 style="color: rgb(231, 164, 175);">🌺SPRING🌺</h2>
-    <img src="spring.jpg" width="500"> <br>
-    <a href="https://unsplash.com/ko" target="_blank" title="unsplash" style="font-size: 13px;">-이미지 출처- </a><br><br>
-
-    <h2 style="color: rgb(231, 164, 175);">✅체크리스트</h2>
-    <p>
-      <input type="checkbox"> 금 공강 만들기(제발)<br>
-      <input type="checkbox"> 봄 옷 사기<br>
-      <input type="checkbox"> 5월 14일 폴드 사기!!<br>
-    </p><br>
- 
-    <h2 style="color: rgb(231, 164, 175);">✨TMI</h2>
-    <p>
-      <li>벚꽃 길이 예쁨</li>
-      <li>따뜻해지기 시작</li>
-      <li>산책하기 좋음 (운동 됨)</li>
-      <li>새학기지만 아직은 버틸만 함</li>
-      <li>슬슬 옷 입기 재밌음 (아이러브코트)</li>
-    </p><br>
-
-    <h2 style="color: rgb(231, 164, 175);">🎵추천 노래</h2>
-    <p>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/HRKOw7c-Al0?si=IIaKP3_wTDqmSL8x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </p><br><br>
+    <div class="container">
+      <h1 class="title">#SEASON_NOTE_🌺SPRING🌺</h1>
+    </div>
+    <div id="grid">
+      <div id="list">
+        <ul>
+          <li><a href="index.html">MAIN</a></li>
+          <li><a href="1.html"id="active">봄</a></li>
+          <li><a href="2.html">여름</a></li>
+          <li><a href="3.html">가을</a></li>
+          <li><a href="4.html">겨울</a></li>
+        </ul>
+      </div>
+  
+      <div id="article">
+        <div id="checkList">
+        <h2 style="color: rgb(231, 164, 175);">✅Check List</h2>
+        <p>
+          <input type="checkbox"> 금 공강 만들기(제발)<br>
+          <input type="checkbox"> 봄 옷 사기<br>
+          <input type="checkbox"> 5월 14일 폴드 사기!!<br>
+        </p><br>
+        </div>
+    
+        <h2 style="color: rgb(231, 164, 175);">🎵Play List</h2>
+        <p>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/HRKOw7c-Al0?si=IIaKP3_wTDqmSL8x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </p><br><br>
+      </div>
+    </div>
+    <input id="dark" type="button" value="night" onclick="darkmode(this, 1);">
+    <br><br>
   </body>
 </html>
